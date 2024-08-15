@@ -16,14 +16,19 @@ def createDatabase():
        else:
           break
 
-    with open(dbName + ".csv", "x") as databaseFile:
+    with open(dbName + ".csv", "x", newline='') as databaseFile:
        databaseFile.write("Website,Username,Password\n")
        databaseFile.close()
 
 
     crypt_csv(dbName + ".csv", dbName + "_encrypted.csv", dbPass)
     os.remove(dbName + ".csv")
-    os.rename(dbName + "_encrypted.csv", dbName + ".csv")
+
+    # Ensure the "Databases" directory exists
+    if not os.path.exists("Databases"):
+       os.makedirs("Databases")
+
+    os.rename(dbName + "_encrypted.csv", "Databases/" + dbName + ".csv")
     print("Database created successfully.")
 
 
