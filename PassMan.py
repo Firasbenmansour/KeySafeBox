@@ -16,13 +16,13 @@ def databaseMenu():
     print("2 - Check Password database")
     choice=input()
     match choice:
-          case 1:
+          case "1":
               Stock()
-          case 2:
+          case "2":
               checkDatabase()
           case _:
               print("Please pick a valid option")
-    return 1
+    
 
 
 ##### MAIN #####
@@ -32,13 +32,13 @@ print("1 - Create Database")
 print("2 - Enter Database")
 print("3 - Delete Database")
 print("4 - Generate Password")
-choice=input()
+choice = input("Enter a number (1-4): ")
 match choice:
-      case 1:
+      case "1":
           createDatabase()
-      case 2:
+      case "2":
           enterDatabase()
-      case 3:
+      case "3":
           deleteDatabase()
       case "4":
           generatePassword()
