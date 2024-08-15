@@ -15,7 +15,7 @@ PassMan is a simple and secure password manager application designed to help use
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/PassMan.git
+   git clone https://github.com/Firasbenmansour/PassMan.git
 2. Navigate to the project directory:
    ```sh
    cd PassMan
