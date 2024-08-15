@@ -1,0 +1,3 @@
+cryptography==3.4.7
+pyfiglet==0.8.post1
+pycryptodome==3.10.1
