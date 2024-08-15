@@ -4,6 +4,8 @@ from encryptionDecryption import decrypt_csv, crypt_csv
 from passwordGenerator import generatePassword
 
 # Specify the directory path
+if not os.path.exists("Databases"):
+       os.makedirs("Databases")
 directory_path = "Databases"
 
 # Get the list of files and directories
