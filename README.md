@@ -27,7 +27,7 @@ PassMan is a simple and secure password manager application designed to help use
 
 1. Run the main script:
    ```sh
-   python3 PassMan.py
+   python PassMan.py
 2.  Follow the on-screen prompts to interact with the password manager.
 
 ## File Structure
@@ -40,7 +40,7 @@ PassMan is a simple and secure password manager application designed to help use
 
 ## Encryption Method
 
-The encryption and decryption of the password database are handled using the `cryptography` library. The following methods are used:
+The encryption and decryption of the password database are handled using the `pycryptodome` library. The following methods are used:
 
 ### Encryption
 
