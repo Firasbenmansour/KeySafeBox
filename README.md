@@ -34,7 +34,8 @@ KeySafeBox is a simple and secure password manager application designed to help 
 
 - **`main.py`**: Main script to run the password manager.
 - **`CheckDatabase.py`**: Contains functions to check and manage the password database.
-- **`passwordGenerator.py`**: Contains functions to generate secure passwords.
+- **`CreateDatabase.py`**: contains the database creation function.
+- **`utils.py`**: Contains other utility functions such as password generation, database refresher and a secure deletion function.
 - **`encryptionDecryption.py`**: Contains functions to encrypt and decrypt the password database.
 - **`requirements.txt`**: List of required Python packages.
 
