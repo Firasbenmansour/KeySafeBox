@@ -1,8 +1,8 @@
-# PassMan
+# KeySafeBox
 
 ## Overview
 
-PassMan is a simple and secure password manager application designed to help users manage their passwords efficiently. It allows users to store, retrieve, and manage their passwords in an encrypted database. The application includes features such as password generation, encryption/decryption of password databases, and user-friendly command-line interactions.
+KeySafeBox is a simple and secure password manager application designed to help users manage their passwords efficiently. It allows users to store, retrieve, and manage their passwords in an encrypted database. The application includes features such as password generation, encryption/decryption of password databases, and user-friendly command-line interactions.
 
 ## Features
 
@@ -15,10 +15,10 @@ PassMan is a simple and secure password manager application designed to help use
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Firasbenmansour/PassMan.git
+   git clone https://github.com/Firasbenmansour/KeySafeBox.git
 2. Navigate to the project directory:
    ```sh
-   cd PassMan
+   cd KeySafeBox
 3. Install the required dependencies:
    ```sh
    pip install -r requirements.txt
@@ -27,12 +27,12 @@ PassMan is a simple and secure password manager application designed to help use
 
 1. Run the main script:
    ```sh
-   python PassMan.py
+   python main.py
 2.  Follow the on-screen prompts to interact with the password manager.
 
 ## File Structure
 
-- **`PassMan.py`**: Main script to run the password manager.
+- **`main.py`**: Main script to run the password manager.
 - **`CheckDatabase.py`**: Contains functions to check and manage the password database.
 - **`passwordGenerator.py`**: Contains functions to generate secure passwords.
 - **`encryptionDecryption.py`**: Contains functions to encrypt and decrypt the password database.
