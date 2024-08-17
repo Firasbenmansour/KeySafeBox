@@ -1,8 +1,38 @@
-#passwordGenerator.py
-
+import os
 import random
 import string
 
+
+
+#deleteFile.py
+def overwrite_with_random_data(file_path, passes=3):
+    """Overwrites the file multiple times with random data."""
+    with open(file_path, "ba+", buffering=0) as f:
+        length = f.tell()  # Get the file size
+        for _ in range(passes):
+            f.seek(0)  # Go to the start of the file
+            f.write(os.urandom(length))  # Overwrite with random bytes
+
+def secure_delete(file_path, passes=3):
+    """Securely deletes the file by overwriting and then deleting it."""
+    if os.path.exists(file_path):
+        # Overwrite the file contents
+        overwrite_with_random_data(file_path, passes)
+        
+        # Rename the file to minimize metadata traces
+        random_name = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
+        new_path = os.path.join(os.path.dirname(file_path), random_name)
+        os.rename(file_path, new_path)
+        
+        # Delete the renamed file
+        os.remove(new_path)
+
+
+
+
+
+
+#passwordGenerator.py
 def optionPick():
      while True: 
           choice = input().strip().lower()
@@ -15,6 +45,7 @@ def optionPick():
 
 def generatePassword():
      # password length 
+     print("--------------------------------------------------------------")
      print("How long you would want your password to be:", end=' ')
      
      while True:
@@ -60,6 +91,10 @@ def generatePassword():
          password += random.choice(characterSet)
          
      print("Generated Password:", password)
+     return password
      
      
-     
+directory_path = "Databases"
+def refreshDatabaseList():
+    global databases
+    databases = os.listdir(directory_path)
