@@ -39,5 +39,7 @@ def mainMenu():
 
 
 if __name__ == "__main__":
+    if not os.path.exists("Databases"):
+        os.makedirs("Databases")
     Banner()
     mainMenu()
