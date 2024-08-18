@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import globals
 
 
 
@@ -94,7 +95,5 @@ def generatePassword():
      return password
      
      
-directory_path = "Databases"
 def refreshDatabaseList():
-    global databases
-    databases = os.listdir(directory_path)
+    databases = os.listdir(globals.directory_path)
