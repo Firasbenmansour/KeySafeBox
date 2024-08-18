@@ -5,18 +5,10 @@ import getpass
 from encryptionDecryption import decrypt_csv, crypt_csv
 from utils import secure_delete, generatePassword, refreshDatabaseList
 
+import globals
 
 
-# Specify the directory path
-if not os.path.exists("Databases"):
-       os.makedirs("Databases")
-directory_path = "Databases"
-
-
-
-# Get the list of files and directories
-databases = os.listdir(directory_path)
-
+directory_path = globals.directory_path
 
 
 # Function to delete an entry from the database
@@ -145,7 +137,6 @@ def deleteDatabase(database):
         print("Database deleted")
     else:
         print("Database not found.")
-    exit()
 
 
 # Function to enter the database
@@ -153,6 +144,7 @@ def enterDatabase():
     # showcase the databases
     refreshDatabaseList()
     print("--------------------------------------------------------------")
+    databases = os.listdir(globals.directory_path)
     if not databases:
         print("No databases found.")
     else:
@@ -161,6 +153,17 @@ def enterDatabase():
             db_name, file_extension = os.path.splitext(db_file)
             print(db_name)
     print("--------------------------------------------------------------")
+
+    print("1 - Enter a database")
+    print("2 - Back")
+    while True:
+        choice = input("Enter a number (1-2): ")
+        if choice == "1":
+            break
+        elif choice == "2":
+            return
+        else:
+            print("Please pick a valid option:", end=' ')
 
     # Database selection
     print("Please select a Database:", end=' ')
@@ -175,7 +178,6 @@ def enterDatabase():
     
     # check if the password is correct
     try: 
-    
         temp_file_path = os.path.join(directory_path, selected_database + "_temp.csv")
         decrypt_csv(os.path.join(directory_path, selected_database + ".csv"), temp_file_path, db_pass)
         secure_delete(temp_file_path)
@@ -205,7 +207,7 @@ def enterDatabase():
             break
         elif choice == "3":
             deleteDatabase(selected_database)
-            break
+            return
         elif choice == "4":
             enterDatabase()
             break
